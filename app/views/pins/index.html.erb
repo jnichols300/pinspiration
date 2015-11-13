@@ -1,0 +1,11 @@
+<h1>Welcome to Pinspiration</h1>
+<%= link_to "Create New Pin!", new_board_pin_path(@pins) %>
+<section>
+  <% @pins.each do |post| %>
+    <article>
+      <h2><%= link_to pin.title, pin_path(pin) %></h2>
+      <time>Updated <%= pin.updated_at %></time>
+      <p><%= pin.description %></p>
+    </article>
+  <% end %>
+</section>

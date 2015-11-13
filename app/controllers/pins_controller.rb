@@ -10,24 +10,24 @@ class PinsController < ApplicationController
 end
 
   def new
-    @pins = Pin.find(params[:Pin_id])
+    @pins = Pin.find(params[:user_id])
     @pins = Pin.new
   end
   def create
-    @pins = Pin.find(params[:pins_id])
-    @pins = @pins.create(pins_params)
+    @pins = Pin.find(params[:id])
+    @pins = @pins.create!(pins_params)
     redirect_to pins_path(@pins)
   end
   def edit
-    @pins = Pin.find(params[:pins_id])
+    @pins = Pin.find(params[:id])
   end
   def update
-    @pins = Pin.find(params[:pins_id])
+    @pins = Pin.find(params[:id])
     @pins.update(comment_params)
     redirect_to pins_path(@pins)
   end
   def destroy
-    @pins = Pin.find(params[:pins_id])
+    @pins = Pin.find(params[:id])
     @pins.destroy
     redirect_to pins_path(@pins)
   end

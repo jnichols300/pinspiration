@@ -1,7 +1,17 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# Pin.destroy_all
+# Board.destroy_all
+# ​
+# pins = Pin.create ([
+# 	{title: "Christmas", image: "http://placezombie.com/400x300"},
+# 	{title: "Thanksgiving", image: "http://placezombie.com/400x300"},
+# 	{title: "Easter", image: "http://placezombie.com/400x300"},
+# 	{title: "Halloween", image: "http://placezombie.com/400x300"},
+# 	{title: "Cinco de Mayo", image: "http://placezombie.com/400x300"},
+# 	{title: "Labor Day", image: "http://placezombie.com/400x300"}
+# ])
+# ​
+# boards = Board.create ([
+# 	{title: "Wedding Dreams"},
+# 	{title: "Home for the Holidays"},
+# 	{title: "Dorm-Aspiration"}
+# ])

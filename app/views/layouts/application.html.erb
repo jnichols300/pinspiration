@@ -4,10 +4,18 @@
   <title>Pinspiration</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Open+Sans' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <section>
+  <% if current_user %>
+    <h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
+  <% else %>
+    <h3><%= link_to 'Signup', new_user_registration_path %></h3>
+    <h3><%= link_to 'Login', new_user_session_path %></h3>
+  <% end %>
+</section>
 <%= yield %>
 
 </body>

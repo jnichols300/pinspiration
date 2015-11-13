@@ -1,12 +1,12 @@
-require 'active_record'
+# require 'active_record'
 
 
 # require_relative '../../models/pin'
 # require_relative './pin_data.rb'
 
 
-Pin.destroy_all
-Board.destroy_all
+# Pin.destroy_all
+# Board.destroy_all
 
 # pin_data = get_pin_data()
 ​

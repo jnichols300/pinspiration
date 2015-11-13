@@ -1,34 +1,34 @@
 class PinsController < ApplicationController
-  before_action :set_pins, only: [:show, :edit, :update, :destroy]
+  before_action :set_pin, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   def index
     if current_user
-    @pins = current_user.pins
+    @pin = current_user.pin
   else
-    @pins = Pin.all
+    @pin = Pin.all
   end
 end
 
   def new
-    @pins = Pin.find(params[:user_id])
-    @pins = Pin.new
+    # @pin = Pin.find(params[:user_id])
+    @pin = Pin.new
   end
   def create
-    @pins = Pin.find(params[:user_id])
-    @pins = @pins.create!(pins_params)
-    redirect_to pins_path(@pins)
+    @pin = Pin.find(params[:user_id])
+    @pin = @pin.create!(pin_params)
+    redirect_to pin_path(@pin)
   end
   def edit
-    @pins = Pin.find(params[:user_id])
+    @pin = Pin.find(params[:user_id])
   end
   def update
-    @pins = Pin.find(params[:user_id])
-    @pins.update(comment_params)
-    redirect_to pins_path(@pins)
+    @pin = Pin.find(params[:user_id])
+    @pin.update(comment_params)
+    redirect_to pin_path(@pin)
   end
   def destroy
-    @pins = Pin.find(params[:id])
-    @pins.destroy
-    redirect_to pins_path(@pins)
+    @pin = Pin.find(params[:id])
+    @pin.destroy
+    redirect_to pin_path(@pin)
   end
 end

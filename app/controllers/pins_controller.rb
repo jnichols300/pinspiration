@@ -14,15 +14,15 @@ end
     @pins = Pin.new
   end
   def create
-    @pins = Pin.find(params[:id])
+    @pins = Pin.find(params[:user_id])
     @pins = @pins.create!(pins_params)
     redirect_to pins_path(@pins)
   end
   def edit
-    @pins = Pin.find(params[:id])
+    @pins = Pin.find(params[:user_id])
   end
   def update
-    @pins = Pin.find(params[:id])
+    @pins = Pin.find(params[:user_id])
     @pins.update(comment_params)
     redirect_to pins_path(@pins)
   end
